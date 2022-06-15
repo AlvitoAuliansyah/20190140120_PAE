@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Data KTP Alvito</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    <body>
+        <div th:insert="/navbar :: navbar"></div>
+        <div class="container mt-3 mb-3">
+            <div align="center" class="text-uppercase fs-1 fw-bold">Database KTP Indonesia</div>
+            <a href="/tambah" class="btn btn-info mb-3">Tambah Data Penduduk</a>
+            <div class="table-responsive">
+                <table class="table align-middle table-striped table-bordered">
+                    <tr class="table-warning">
+                        <th>NIK</th>
+                        <th>Nama</th>
+                        <th>Tanggal Lahir</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Alamat</th>
+                        <th>Agama</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr th:each="godata:${goData}">
+                        <td th:text="${godata.noktp}"></td>
+                        <td th:text="${godata.nama}"></td>
+                        <td th:text="${#calendars.format(godata.tgllahir,'dd-MMM-yyyy')}"></td>
+                        <td th:text="${godata.jeniskelamin}"></td>
+                        <td th:text="${godata.alamat}"></td>
+                        <td th:text="${godata.agama}"></td>
+
+                        <td>
+                            <a class="btn btn-warning" th:href="@{/detail/{id}(id=${godata.id})}">Detail</a>
+                            <a class="btn btn-info" th:href="@{/edit/{id}(id=${godata.id})}">Edit</a>
+                            <a class="btn btn-danger" th:href="@{/delete/{id}(id=${godata.id})}" onclick="return confirm('Apakah Anda yakin menghapus data?')">Delete</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+    </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="card m-5">
+            <div class="card-header bg-dark">
+                <h5 class="card-title" align="center" style="color:white">Tambah Data</h5>
+            </div>
+            <div class="card-body">
+                <a href="/data" class="btn btn-danger">Kembali</a>
+                <form action="/savedata" class="form" method="POST" enctype="multipart/form-data">
+                    <div class="form-group mb-3">
+                        <label for="noktp" class="form-label">NIK</label>
+                        <input type="text" class="form-control" id="noktp" placeholder="NIK" name="noktp">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="nama" class="form-label">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="nama" placeholder="Nama Lengkap" name="nama">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="tgllahir" class="form-label">Tanggal Lahir</label>
+                        <input type="date" class="form-control" id="tgllahir" placeholder="Tanggal Lahir" name="tgllahir">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="jeniskelamin" class="form-label">Jenis Kelamin</label>
+                        <select class="form-select" aria-label="Jenis Kelamin" id="jeniskelamin" name="jeniskelamin">
+                            <option value="Laki-laki">Laki - laki</option>
+                            <option value="Perempuan">Perempuan</option>                            
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="alamat" class="form-label">Alamat</label>
+                        <textarea class="form-control" id="alamat" rows="3" placeholder="Alamat" name="alamat"></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="agama" class="form-label">Agama</label>
+                        <select class="form-select" aria-label="Agama" id="agama" name="agama">
+                            <option value="Islam">Islam</option>
+                            <option value="Katolik">Katolik</option>
+                            <option value="Protestan">Protestan</option>
+                            <option value="Hindu">Hindu</option>
+                            <option value="Budha">Budha</option>
+                            <option value="Konghucu">Konghucu</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="status" class="form-label">Status Perkawinan</label>
+                        <select class="form-select" aria-label="Status Perkawinan" id="status" name="status">
+                            <option value="Belum Kawin">Belum Kawin</option>
+                            <option value="Kawin">Kawin</option>                            
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="pekerjaan" class="form-label">Pekerjaan</label>
+                        <input type="text" class="form-control" id="pekerjaan" placeholder="Pekerjaan" name="pekerjaan">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="kewarganegaraan" class="form-label">Kewarganegaraan</label>
+                        <select class="form-select" aria-label="Kewarganegaraan" id="warganegaraan" name="warganegara">
+                            <option value="WNI">WNI</option>
+                            <option value="WNA">WNA</option>                            
+                        </select>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="foto" class="form-label">Foto</label>
+                        
+                        <input type="file" class="form-control" id="foto" placeholder="Foto" name="foto">
+                    </div>
+                    <div class="mb-3">
+                        
+                        <button type="submit" class="btn btn-success" aria-label="Close">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="card m-5">
+                <div class="card-header bg-dark">
+                    <h5 class="card-title" align="center" style="color:white">Detail Informasi</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">NIK</label>
+                        <p th:text="${data.noktp}" class="fs-4 fw-bold"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Nama</label>
+                        <p th:text="${data.nama}" class="fs-4 fw-bold"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Tanggal Lahir</label>
+                        <p th:text="${#calendars.format(data.tgllahir,'dd-MMM-yyyy')}" class="fs-4 fw-bold"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Jenis Kelamin</label>
+                        <p th:text="${data.jeniskelamin}" class="fs-4 fw-bold"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Agama</label>
+                        <p th:text="${data.agama}" class="fs-4 fw-bold"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Alamat</label>
+                        <p th:text="${data.alamat}" class="fs-4 fw-bold"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Status Perkawinan</label>
+                        <p th:text="${data.status}" class="fs-4 fw-bold"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Pekerjaan</label>
+                        <p th:text="${data.pekerjaan}" class="fs-4 fw-bold"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Kewarganegaraan</label>
+                        <p th:text="${data.warganegara}" class="fs-4 fw-bold"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Berlaku Hingga</label>
+                        <p th:text="${data.berlakuhingga}" class="fs-4 fw-bold"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Foto</label>
+                        <img th:src="${foto}" style="width: 300px">
+                    </div>
+                    <div class="mb-3">
+                        <a class="btn btn-danger" href="/data">Kembali</a>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
